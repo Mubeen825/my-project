@@ -3,158 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mubeen | Personal Portfolio</title>
+    <title>Mubeen | Professional Portfolio</title>
     
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
         html { scroll-behavior: smooth; }
-        .hero-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .nav-link:hover { color: #60a5fa !important; }
-        .project-card:hover img { transform: scale(1.05); transition: 0.4s; }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+        }
+
+        .skill-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.3);
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            border-color: #3b82f6;
+            background: #f8fafc;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
+<body class="bg-white text-slate-900">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-slate-900 sticky-top py-3 shadow-lg">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark glass-nav sticky-top py-3">
         <div class="container">
-            <a class="navbar-brand font-black text-2xl tracking-tighter" href="#">MUB<span class="text-blue-500">EEN.</span></a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand font-extrabold text-2xl tracking-tighter" href="#">
+                MUB<span class="text-blue-500 underline decoration-2 underline-offset-4">EEN</span>
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto font-semibold gap-3">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <ul class="navbar-nav ms-auto gap-lg-4 text-sm font-semibold uppercase tracking-wider">
+                    <li class="nav-item"><a class="nav-link text-white hover:text-blue-400" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white hover:text-blue-400" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white hover:text-blue-400" href="#projects">Work</a></li>
+                    <li class="nav-item"><a class="nav-link text-white hover:text-blue-400" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header id="home" class="hero-bg text-white py-32 flex items-center min-h-[80vh]">
-        <div class="container">
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient py-32 text-white relative overflow-hidden">
+        <div class="container relative z-10">
             <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <span class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-widest mb-4 inline-block">Available for Projects</span>
-                    <h1 class="text-6xl md:text-8xl font-black mb-4 leading-none">I'm <span class="text-blue-500">Mubeen</span></h1>
-                    <p class="text-xl md:text-2xl text-slate-400 mb-8 max-w-2xl">
-                        A Developer dedicated to crafting exceptional digital experiences that are fast, accessible, and visually stunning.
+                <div class="col-lg-7">
+                    <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full mb-6">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">Available for Hire</span>
+                    </div>
+                    <h1 class="text-5xl md:text-8xl font-black leading-tight mb-6">
+                        Creating <span class="text-blue-500">Digital</span> Excellence.
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-xl leading-relaxed">
+                        I'm <span class="text-white font-bold">Mubeen</span>, a dedicated Full Stack Developer specializing in building high-performance web applications with modern technologies.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-bold transition-all no-underline shadow-lg shadow-blue-500/20">Explore My Work</a>
-                        <a href="#contact" class="border border-slate-600 hover:bg-slate-800 text-white px-8 py-3 rounded-full font-bold transition-all no-underline">Let's Talk</a>
+                        <a href="#projects" class="btn btn-primary px-9 py-3 rounded-full font-bold bg-blue-600 border-0 shadow-lg shadow-blue-600/30">My Projects</a>
+                        <a href="#contact" class="btn btn-outline-light px-9 py-3 rounded-full font-bold">Let's Talk</a>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-
-    <section id="about" class="py-24 bg-white">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-md-5">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=500&h=600" class="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition duration-500" alt="Mubeen">
-                        <div class="absolute -z-10 -bottom-6 -left-6 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl"></div>
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <h2 class="text-4xl font-bold mb-6">About Me</h2>
-                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
-                        Hello! I'm Mubeen. I thrive at the intersection of design and technology. My goal is to build products that not only look good but function flawlessly. Whether it's a complex web application or a simple landing page, I bring a detail-oriented approach to every project.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 border-t border-slate-100 pt-6">
-                        <div>
-                            <p class="text-sm text-slate-400 uppercase font-bold tracking-widest">Education</p>
-                            <p class="font-bold">Computer Science Graduate</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-slate-400 uppercase font-bold tracking-widest">Location</p>
-                            <p class="font-bold">Remote / Worldwide</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Decorative background element -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
     </section>
 
-    <section id="skills" class="py-24 bg-slate-50">
-        <div class="container text-center">
-            <h2 class="text-4xl font-bold mb-16 text-slate-900">Tech Stack</h2>
-            <div class="flex flex-wrap justify-center gap-6">
-                <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition w-32 h-32 flex flex-col items-center justify-center border-b-4 border-blue-500">
-                    <i class="fab fa-html5 text-3xl text-orange-500 mb-2"></i>
-                    <span class="font-bold text-sm">HTML5</span>
-                </div>
-                <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition w-32 h-32 flex flex-col items-center justify-center border-b-4 border-blue-400">
-                    <i class="fab fa-css3-alt text-3xl text-blue-500 mb-2"></i>
-                    <span class="font-bold text-sm">CSS3</span>
-                </div>
-                <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition w-32 h-32 flex flex-col items-center justify-center border-b-4 border-yellow-400">
-                    <i class="fab fa-js text-3xl text-yellow-500 mb-2"></i>
-                    <span class="font-bold text-sm">JavaScript</span>
-                </div>
-                <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition w-32 h-32 flex flex-col items-center justify-center border-b-4 border-cyan-400">
-                    <i class="fab fa-react text-3xl text-cyan-400 mb-2"></i>
-                    <span class="font-bold text-sm">React</span>
-                </div>
-                <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition w-32 h-32 flex flex-col items-center justify-center border-b-4 border-indigo-500">
-                    <i class="fas fa-code text-3xl text-indigo-500 mb-2"></i>
-                    <span class="font-bold text-sm">Tailwind</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-24 bg-white">
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
         <div class="container">
-            <div class="flex justify-between items-end mb-16">
-                <div>
-                    <h2 class="text-4xl font-bold mb-2">Selected Projects</h2>
-                    <p class="text-slate-500 italic">Work that defines my expertise</p>
-                </div>
+            <div class="text-center mb-20">
+                <h2 class="text-xs font-black text-blue-600 uppercase tracking-[0.3em] mb-3">What I Do</h2>
+                <h3 class="text-4xl font-extrabold text-slate-900">Services I Provide</h3>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card group rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
-                        <div class="overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?fit=crop&w=500&h=350" alt="Work" class="w-full h-64 object-cover">
+                <div class="col-md-4">
+                    <div class="service-card p-10 rounded-3xl h-full">
+                        <div class="w-14 h-14 bg-blue-50 flex items-center justify-center rounded-2xl mb-8">
+                            <i class="fas fa-layer-group text-blue-600 text-2xl"></i>
                         </div>
-                        <div class="p-8 bg-white">
-                            <h3 class="font-bold text-xl mb-2">E-Commerce Platform</h3>
-                            <p class="text-slate-500 text-sm mb-4">A modern shopping experience built for speed.</p>
-                            <a href="#" class="text-blue-600 font-bold no-underline text-sm uppercase tracking-widest">Case Study →</a>
+                        <h4 class="text-xl font-bold mb-4">Web Development</h4>
+                        <p class="text-slate-500 leading-relaxed">Building responsive, fast, and secure websites tailored to your business needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-10 rounded-3xl h-full">
+                        <div class="w-14 h-14 bg-purple-50 flex items-center justify-center rounded-2xl mb-8">
+                            <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">UI/UX Design</h4>
+                        <p class="text-slate-500 leading-relaxed">Creating intuitive user interfaces that provide engaging experiences for your users.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-10 rounded-3xl h-full">
+                        <div class="w-14 h-14 bg-emerald-50 flex items-center justify-center rounded-2xl mb-8">
+                            <i class="fas fa-rocket text-emerald-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">SEO Optimization</h4>
+                        <p class="text-slate-500 leading-relaxed">Optimizing your web presence to rank higher on search engines and reach more people.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills (Tailwind Utility Focused) -->
+    <section id="skills" class="py-24 bg-slate-50 border-y border-slate-100">
+        <div class="container text-center">
+            <h3 class="text-2xl font-bold mb-12">Expertise In</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="skill-badge bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-200 transition-all cursor-default">
+                    <i class="fab fa-html5 text-orange-500 mr-2"></i> <span class="font-bold uppercase tracking-tighter">HTML5</span>
+                </div>
+                <div class="skill-badge bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-200 transition-all cursor-default">
+                    <i class="fab fa-css3-alt text-blue-500 mr-2"></i> <span class="font-bold uppercase tracking-tighter">CSS3</span>
+                </div>
+                <div class="skill-badge bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-200 transition-all cursor-default">
+                    <i class="fab fa-js text-yellow-500 mr-2"></i> <span class="font-bold uppercase tracking-tighter">JavaScript</span>
+                </div>
+                <div class="skill-badge bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-200 transition-all cursor-default">
+                    <i class="fab fa-react text-cyan-400 mr-2"></i> <span class="font-bold uppercase tracking-tighter">React</span>
+                </div>
+                <div class="skill-badge bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-200 transition-all cursor-default">
+                    <i class="fas fa-wind text-blue-400 mr-2"></i> <span class="font-bold uppercase tracking-tighter">Tailwind</span>
+                </div>
+                <div class="skill-badge bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-200 transition-all cursor-default">
+                    <i class="fab fa-node-js text-green-500 mr-2"></i> <span class="font-bold uppercase tracking-tighter">Node.js</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+        <div class="container">
+            <div class="row mb-12 align-items-end">
+                <div class="col-md-6">
+                    <h3 class="text-4xl font-extrabold mb-4 text-slate-900">Featured Work</h3>
+                    <p class="text-slate-500">Handpicked projects that showcase my technical skills.</p>
+                </div>
+            </div>
+            <div class="row g-5">
+                <!-- Project 1 -->
+                <div class="col-lg-6">
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-[2.5rem] bg-slate-100 mb-6">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop" class="w-full h-[400px] object-cover group-hover:scale-110 transition duration-700 ease-in-out" alt="Project">
+                            <div class="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition duration-500"></div>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">Finance Dashboard UI</h4>
+                        <p class="text-slate-500 mb-4">A clean, functional dashboard for monitoring crypto assets.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[10px] font-bold uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-full">React</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-full">D3.js</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card group rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
-                        <div class="overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fit=crop&w=500&h=350" alt="Work" class="w-full h-64 object-cover">
+                <!-- Project 2 -->
+                <div class="col-lg-6">
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-[2.5rem] bg-slate-100 mb-6">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop" class="w-full h-[400px] object-cover group-hover:scale-110 transition duration-700 ease-in-out" alt="Project">
+                            <div class="absolute inset-0 bg-purple-600/10 group-hover:bg-transparent transition duration-500"></div>
                         </div>
-                        <div class="p-8 bg-white">
-                            <h3 class="font-bold text-xl mb-2">Developer Tool</h3>
-                            <p class="text-slate-500 text-sm mb-4">A CLI tool designed to automate dev workflows.</p>
-                            <a href="#" class="text-blue-600 font-bold no-underline text-sm uppercase tracking-widest">Case Study →</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card group rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
-                        <div class="overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1551288049-bbbda5366392?fit=crop&w=500&h=350" alt="Work" class="w-full h-64 object-cover">
-                        </div>
-                        <div class="p-8 bg-white">
-                            <h3 class="font-bold text-xl mb-2">Data Visualizer</h3>
-                            <p class="text-slate-500 text-sm mb-4">Turning raw complex data into beautiful insights.</p>
-                            <a href="#" class="text-blue-600 font-bold no-underline text-sm uppercase tracking-widest">Case Study →</a>
+                        <h4 class="text-2xl font-bold mb-2">E-Learning Mobile App</h4>
+                        <p class="text-slate-500 mb-4">Mobile-first platform for interactive video courses.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[10px] font-bold uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-full">Next.js</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-full">Firebase</span>
                         </div>
                     </div>
                 </div>
@@ -162,41 +210,49 @@
         </div>
     </section>
 
-    <section id="contact" class="py-24 bg-slate-900 text-white overflow-hidden relative">
-        <div class="container relative z-10">
-            <div class="row justify-center">
-                <div class="col-lg-6 text-center">
-                    <h2 class="text-4xl font-bold mb-4 leading-tight">Ready to start a project? <br><span class="text-blue-500 italic">Let's connect.</span></h2>
-                    <p class="text-slate-400 mb-12">I’m currently available for freelance work and full-time opportunities.</p>
-                    <a href="mailto:mubeen@example.com" class="text-3xl md:text-5xl font-black text-white hover:text-blue-400 transition break-words no-underline">
-                        hi.mubeen@email.com
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-900 text-white">
+        <div class="container">
+            <div class="bg-blue-600 rounded-[3rem] p-12 md:p-24 relative overflow-hidden text-center shadow-2xl">
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-6xl font-black mb-6 italic tracking-tight underline decoration-white/30 underline-offset-8">Let's build something <br>extraordinary.</h2>
+                    <p class="text-blue-100 text-lg mb-12 max-w-lg mx-auto opacity-80">I am currently available for freelance projects and full-time positions.</p>
+                    <a href="mailto:mubeen@example.com" class="text-xl md:text-3xl font-bold bg-white text-blue-600 px-10 py-4 rounded-full shadow-2xl hover:scale-105 transition no-underline inline-block">
+                        Say Hello <i class="fas fa-paper-plane ml-2"></i>
                     </a>
-                    <div class="mt-12 flex justify-center gap-4 text-2xl">
-                        <a href="#" class="hover:text-blue-400"><i class="fab fa-github"></i></a>
-                        <a href="#" class="hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
-                    </div>
                 </div>
+                <!-- Circle background -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-24 -mt-24 blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full -ml-24 -mb-24 blur-3xl"></div>
+            </div>
+            
+            <div class="mt-20 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/10 pt-12">
+                <div class="text-2xl font-black">MUBEEN.</div>
+                <div class="flex gap-8">
+                    <a href="#" class="text-white hover:text-blue-400 transition"><i class="fab fa-github fa-xl"></i></a>
+                    <a href="#" class="text-white hover:text-blue-400 transition"><i class="fab fa-linkedin fa-xl"></i></a>
+                    <a href="#" class="text-white hover:text-blue-400 transition"><i class="fab fa-instagram fa-xl"></i></a>
+                </div>
+                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">© 2025 Mubeen. All Rights Reserved.</p>
             </div>
         </div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] -z-0"></div>
     </section>
 
-    <footer class="py-8 bg-black text-slate-600 border-t border-slate-900 text-center text-sm">
-        <p>&copy; 2025 Mubeen. Built with Tailwind & Bootstrap.</p>
-    </footer>
-
+    <!-- Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Simple scroll logic for navbar -->
     <script>
-        // Smooth reveal on scroll (optional basic JS)
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('py-2', 'shadow-2xl');
+        window.onscroll = function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-2xl', 'py-2');
+                nav.classList.remove('py-3');
             } else {
-                navbar.classList.remove('py-2', 'shadow-2xl');
+                nav.classList.remove('shadow-2xl', 'py-2');
+                nav.classList.add('py-3');
             }
-        });
+        };
     </script>
 </body>
 </html>
