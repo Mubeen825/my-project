@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mubeen | Personal Portfolio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .nav-link:hover { color: #60a5fa !important; }
+        .project-card:hover img { transform: scale(1.05); transition: 0.4s; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-slate-900 sticky-top py-3 shadow-lg">
+        <div class="container">
+            <a class="navbar-brand font-black text-2xl tracking-tighter" href="#">MUB<span class="text-blue-500">EEN.</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto font-semibold gap-3">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-bg text-white py-32 flex items-center min-h-[80vh]">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <span class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-widest mb-4 inline-block">Available for Projects</span>
+                    <h1 class="text-6xl md:text-8xl font-black mb-4 leading-none">I'm <span class="text-blue-500">Mubeen</span></h1>
+                    <p class="text-xl md:text-2xl text-slate-400 mb-8 max-w-2xl">
+                        A Developer dedicated to crafting exceptional digital experiences that are fast, accessible, and visually stunning.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-bold transition-all no-underline shadow-lg shadow-blue-500/20">Explore My Work</a>
+                        <a href="#contact" class="border border-slate-600 hover:bg-slate-800 text-white px-8 py-3 rounded-full font-bold transition-all no-underline">Let's Talk</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-24 bg-white">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-5">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=500&h=600" class="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition duration-500" alt="Mubeen">
+                        <div class="absolute -z-10 -bottom-6 -left-6 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl"></div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <h2 class="text-4xl font-bold mb-6">About Me</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Hello! I'm Mubeen. I thrive at the intersection of design and technology. My goal is to build products that not only look good but function flawlessly. Whether it's a complex web application or a simple landing page, I bring a detail-oriented approach to every project.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 border-t border-slate-100 pt-6">
+                        <div>
+                            <p class="text-sm text-slate-400 uppercase font-bold tracking-widest">Education</p>
+                            <p class="font-bold">Computer Science Graduate</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-400 uppercase font-bold tracking-widest">Location</p>
+                            <p class="font-bold">Remote / Worldwide</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 bg-slate-50">
+        <div class="container text-center">
+            <h2 class="text-4xl font-bold mb-16 text-slate-900">Tech Stack</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition w-32 h-32 flex flex-col items-center justify-center border-b-4 border-blue-500">
+                    <i class="fab fa-html5 text-3xl text-orange-500 mb-2"></i>
+                    <span class="font-bold text-sm">HTML5</span>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition w-32 h-32 flex flex-col items-center justify-center border-b-4 border-blue-400">
+                    <i class="fab fa-css3-alt text-3xl text-blue-500 mb-2"></i>
+                    <span class="font-bold text-sm">CSS3</span>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition w-32 h-32 flex flex-col items-center justify-center border-b-4 border-yellow-400">
+                    <i class="fab fa-js text-3xl text-yellow-500 mb-2"></i>
+                    <span class="font-bold text-sm">JavaScript</span>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition w-32 h-32 flex flex-col items-center justify-center border-b-4 border-cyan-400">
+                    <i class="fab fa-react text-3xl text-cyan-400 mb-2"></i>
+                    <span class="font-bold text-sm">React</span>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition w-32 h-32 flex flex-col items-center justify-center border-b-4 border-indigo-500">
+                    <i class="fas fa-code text-3xl text-indigo-500 mb-2"></i>
+                    <span class="font-bold text-sm">Tailwind</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-white">
+        <div class="container">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-4xl font-bold mb-2">Selected Projects</h2>
+                    <p class="text-slate-500 italic">Work that defines my expertise</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card group rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?fit=crop&w=500&h=350" alt="Work" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="p-8 bg-white">
+                            <h3 class="font-bold text-xl mb-2">E-Commerce Platform</h3>
+                            <p class="text-slate-500 text-sm mb-4">A modern shopping experience built for speed.</p>
+                            <a href="#" class="text-blue-600 font-bold no-underline text-sm uppercase tracking-widest">Case Study →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card group rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fit=crop&w=500&h=350" alt="Work" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="p-8 bg-white">
+                            <h3 class="font-bold text-xl mb-2">Developer Tool</h3>
+                            <p class="text-slate-500 text-sm mb-4">A CLI tool designed to automate dev workflows.</p>
+                            <a href="#" class="text-blue-600 font-bold no-underline text-sm uppercase tracking-widest">Case Study →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card group rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551288049-bbbda5366392?fit=crop&w=500&h=350" alt="Work" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="p-8 bg-white">
+                            <h3 class="font-bold text-xl mb-2">Data Visualizer</h3>
+                            <p class="text-slate-500 text-sm mb-4">Turning raw complex data into beautiful insights.</p>
+                            <a href="#" class="text-blue-600 font-bold no-underline text-sm uppercase tracking-widest">Case Study →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="container relative z-10">
+            <div class="row justify-center">
+                <div class="col-lg-6 text-center">
+                    <h2 class="text-4xl font-bold mb-4 leading-tight">Ready to start a project? <br><span class="text-blue-500 italic">Let's connect.</span></h2>
+                    <p class="text-slate-400 mb-12">I’m currently available for freelance work and full-time opportunities.</p>
+                    <a href="mailto:mubeen@example.com" class="text-3xl md:text-5xl font-black text-white hover:text-blue-400 transition break-words no-underline">
+                        hi.mubeen@email.com
+                    </a>
+                    <div class="mt-12 flex justify-center gap-4 text-2xl">
+                        <a href="#" class="hover:text-blue-400"><i class="fab fa-github"></i></a>
+                        <a href="#" class="hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] -z-0"></div>
+    </section>
+
+    <footer class="py-8 bg-black text-slate-600 border-t border-slate-900 text-center text-sm">
+        <p>&copy; 2025 Mubeen. Built with Tailwind & Bootstrap.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth reveal on scroll (optional basic JS)
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-2xl');
+            } else {
+                navbar.classList.remove('py-2', 'shadow-2xl');
+            }
+        });
+    </script>
+</body>
+</html>
