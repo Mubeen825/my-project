@@ -3,256 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mubeen | Professional Portfolio</title>
+    <title>Mubeen | Full Stack Developer</title>
     
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { font-family: 'Inter', sans-serif; background-color: #030712; color: #f8fafc; }
+        h1, h2, h3, .navbar-brand { font-family: 'Space Grotesk', sans-serif; }
         html { scroll-behavior: smooth; }
         
-        .glass-nav {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        /* Premium Background Effect */
+        .bg-mesh {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, #030712 100%);
         }
 
-        .hero-gradient {
-            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .skill-badge:hover {
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(59, 130, 246, 0.5);
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.3);
         }
 
-        .service-card {
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
+        .nav-blur {
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .service-card:hover {
-            border-color: #3b82f6;
-            background: #f8fafc;
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
     </style>
 </head>
-<body class="bg-white text-slate-900">
+<body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark glass-nav sticky-top py-3">
+    <div class="bg-mesh"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark nav-blur sticky-top py-3">
         <div class="container">
-            <a class="navbar-brand font-extrabold text-2xl tracking-tighter" href="#">
-                MUB<span class="text-blue-500 underline decoration-2 underline-offset-4">EEN</span>
+            <a class="navbar-brand font-bold text-2xl tracking-tight" href="#">
+                MUB<span class="text-blue-500">EEN</span>
             </a>
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+                <i class="fas fa-bars-staggered"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto gap-lg-4 text-sm font-semibold uppercase tracking-wider">
-                    <li class="nav-item"><a class="nav-link text-white hover:text-blue-400" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-white hover:text-blue-400" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link text-white hover:text-blue-400" href="#projects">Work</a></li>
-                    <li class="nav-item"><a class="nav-link text-white hover:text-blue-400" href="#contact">Contact</a></li>
+                <ul class="navbar-nav ms-auto gap-lg-4 text-[13px] font-medium uppercase tracking-[0.2em]">
+                    <li class="nav-item"><a class="nav-link text-slate-400 hover:text-white" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-slate-400 hover:text-white" href="#services">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link text-slate-400 hover:text-white" href="#projects">Work</a></li>
+                    <li class="nav-item"><a class="nav-link bg-blue-600/20 text-blue-400 px-4 rounded-full border border-blue-500/30" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-gradient py-32 text-white relative overflow-hidden">
-        <div class="container relative z-10">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full mb-6">
-                        <span class="relative flex h-2 w-2">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                        </span>
-                        <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">Available for Hire</span>
-                    </div>
-                    <h1 class="text-5xl md:text-8xl font-black leading-tight mb-6">
-                        Creating <span class="text-blue-500">Digital</span> Excellence.
-                    </h1>
-                    <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-xl leading-relaxed">
-                        I'm <span class="text-white font-bold">Mubeen</span>, a dedicated Full Stack Developer specializing in building high-performance web applications with modern technologies.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="btn btn-primary px-9 py-3 rounded-full font-bold bg-blue-600 border-0 shadow-lg shadow-blue-600/30">My Projects</a>
-                        <a href="#contact" class="btn btn-outline-light px-9 py-3 rounded-full font-bold">Let's Talk</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Decorative background element -->
-        <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-24 bg-white">
-        <div class="container">
-            <div class="text-center mb-20">
-                <h2 class="text-xs font-black text-blue-600 uppercase tracking-[0.3em] mb-3">What I Do</h2>
-                <h3 class="text-4xl font-extrabold text-slate-900">Services I Provide</h3>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="service-card p-10 rounded-3xl h-full">
-                        <div class="w-14 h-14 bg-blue-50 flex items-center justify-center rounded-2xl mb-8">
-                            <i class="fas fa-layer-group text-blue-600 text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-4">Web Development</h4>
-                        <p class="text-slate-500 leading-relaxed">Building responsive, fast, and secure websites tailored to your business needs.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card p-10 rounded-3xl h-full">
-                        <div class="w-14 h-14 bg-purple-50 flex items-center justify-center rounded-2xl mb-8">
-                            <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-4">UI/UX Design</h4>
-                        <p class="text-slate-500 leading-relaxed">Creating intuitive user interfaces that provide engaging experiences for your users.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card p-10 rounded-3xl h-full">
-                        <div class="w-14 h-14 bg-emerald-50 flex items-center justify-center rounded-2xl mb-8">
-                            <i class="fas fa-rocket text-emerald-600 text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-4">SEO Optimization</h4>
-                        <p class="text-slate-500 leading-relaxed">Optimizing your web presence to rank higher on search engines and reach more people.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills (Tailwind Utility Focused) -->
-    <section id="skills" class="py-24 bg-slate-50 border-y border-slate-100">
+    <section id="home" class="py-32 relative">
         <div class="container text-center">
-            <h3 class="text-2xl font-bold mb-12">Expertise In</h3>
-            <div class="flex flex-wrap justify-center gap-4">
-                <div class="skill-badge bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-200 transition-all cursor-default">
-                    <i class="fab fa-html5 text-orange-500 mr-2"></i> <span class="font-bold uppercase tracking-tighter">HTML5</span>
-                </div>
-                <div class="skill-badge bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-200 transition-all cursor-default">
-                    <i class="fab fa-css3-alt text-blue-500 mr-2"></i> <span class="font-bold uppercase tracking-tighter">CSS3</span>
-                </div>
-                <div class="skill-badge bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-200 transition-all cursor-default">
-                    <i class="fab fa-js text-yellow-500 mr-2"></i> <span class="font-bold uppercase tracking-tighter">JavaScript</span>
-                </div>
-                <div class="skill-badge bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-200 transition-all cursor-default">
-                    <i class="fab fa-react text-cyan-400 mr-2"></i> <span class="font-bold uppercase tracking-tighter">React</span>
-                </div>
-                <div class="skill-badge bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-200 transition-all cursor-default">
-                    <i class="fas fa-wind text-blue-400 mr-2"></i> <span class="font-bold uppercase tracking-tighter">Tailwind</span>
-                </div>
-                <div class="skill-badge bg-white px-8 py-4 rounded-2xl shadow-sm border border-slate-200 transition-all cursor-default">
-                    <i class="fab fa-node-js text-green-500 mr-2"></i> <span class="font-bold uppercase tracking-tighter">Node.js</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-24">
-        <div class="container">
-            <div class="row mb-12 align-items-end">
-                <div class="col-md-6">
-                    <h3 class="text-4xl font-extrabold mb-4 text-slate-900">Featured Work</h3>
-                    <p class="text-slate-500">Handpicked projects that showcase my technical skills.</p>
-                </div>
-            </div>
-            <div class="row g-5">
-                <!-- Project 1 -->
-                <div class="col-lg-6">
-                    <div class="group cursor-pointer">
-                        <div class="relative overflow-hidden rounded-[2.5rem] bg-slate-100 mb-6">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop" class="w-full h-[400px] object-cover group-hover:scale-110 transition duration-700 ease-in-out" alt="Project">
-                            <div class="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition duration-500"></div>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-2">Finance Dashboard UI</h4>
-                        <p class="text-slate-500 mb-4">A clean, functional dashboard for monitoring crypto assets.</p>
-                        <div class="flex gap-2">
-                            <span class="text-[10px] font-bold uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-full">React</span>
-                            <span class="text-[10px] font-bold uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-full">D3.js</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="col-lg-6">
-                    <div class="group cursor-pointer">
-                        <div class="relative overflow-hidden rounded-[2.5rem] bg-slate-100 mb-6">
-                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop" class="w-full h-[400px] object-cover group-hover:scale-110 transition duration-700 ease-in-out" alt="Project">
-                            <div class="absolute inset-0 bg-purple-600/10 group-hover:bg-transparent transition duration-500"></div>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-2">E-Learning Mobile App</h4>
-                        <p class="text-slate-500 mb-4">Mobile-first platform for interactive video courses.</p>
-                        <div class="flex gap-2">
-                            <span class="text-[10px] font-bold uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-full">Next.js</span>
-                            <span class="text-[10px] font-bold uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-full">Firebase</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-slate-900 text-white">
-        <div class="container">
-            <div class="bg-blue-600 rounded-[3rem] p-12 md:p-24 relative overflow-hidden text-center shadow-2xl">
-                <div class="relative z-10">
-                    <h2 class="text-4xl md:text-6xl font-black mb-6 italic tracking-tight underline decoration-white/30 underline-offset-8">Let's build something <br>extraordinary.</h2>
-                    <p class="text-blue-100 text-lg mb-12 max-w-lg mx-auto opacity-80">I am currently available for freelance projects and full-time positions.</p>
-                    <a href="mailto:mubeen@example.com" class="text-xl md:text-3xl font-bold bg-white text-blue-600 px-10 py-4 rounded-full shadow-2xl hover:scale-105 transition no-underline inline-block">
-                        Say Hello <i class="fas fa-paper-plane ml-2"></i>
-                    </a>
-                </div>
-                <!-- Circle background -->
-                <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-24 -mt-24 blur-3xl"></div>
-                <div class="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full -ml-24 -mb-24 blur-3xl"></div>
+            <div class="inline-flex items-center gap-2 bg-slate-800/50 border border-slate-700 px-4 py-2 rounded-full mb-8">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span class="text-xs font-semibold text-slate-300 uppercase tracking-widest">Open for new opportunities</span>
             </div>
             
-            <div class="mt-20 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/10 pt-12">
-                <div class="text-2xl font-black">MUBEEN.</div>
-                <div class="flex gap-8">
-                    <a href="#" class="text-white hover:text-blue-400 transition"><i class="fab fa-github fa-xl"></i></a>
-                    <a href="#" class="text-white hover:text-blue-400 transition"><i class="fab fa-linkedin fa-xl"></i></a>
-                    <a href="#" class="text-white hover:text-blue-400 transition"><i class="fab fa-instagram fa-xl"></i></a>
-                </div>
-                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">© 2025 Mubeen. All Rights Reserved.</p>
+            <h1 class="text-6xl md:text-8xl font-bold tracking-tighter mb-8">
+                Building the <span class="text-gradient">Future</span> <br> of the Web.
+            </h1>
+            
+            <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                I'm <span class="text-white font-semibold">Mubeen</span>. I craft high-performance, visually stunning digital experiences using modern full-stack architectures.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="px-8 py-4 rounded-xl font-bold bg-white text-black hover:bg-slate-200 transition duration-300">View Work</a>
+                <a href="#contact" class="px-8 py-4 rounded-xl font-bold bg-slate-900 border border-slate-700 hover:bg-slate-800 transition duration-300">Contact Me</a>
             </div>
         </div>
     </section>
 
-    <!-- Bootstrap Bundle -->
+    <section id="services" class="py-24">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="glass-card p-10 rounded-[2rem] h-full flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-blue-500/20 flex items-center justify-center rounded-xl mb-6 text-blue-400">
+                                <i class="fas fa-code text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold mb-4 text-white">Full-Stack Development</h3>
+                            <p class="text-slate-400 text-lg">Scalable, production-ready applications built with the latest frameworks like Next.js, Node, and advanced database architectures.</p>
+                        </div>
+                        <div class="flex gap-4 mt-8">
+                            <span class="text-xs font-bold bg-slate-800 px-4 py-2 rounded-lg">Architecture</span>
+                            <span class="text-xs font-bold bg-slate-800 px-4 py-2 rounded-lg">Performance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="glass-card p-10 rounded-[2rem] h-full bg-gradient-to-br from-purple-500/10 to-transparent">
+                        <div class="w-12 h-12 bg-purple-500/20 flex items-center justify-center rounded-xl mb-6 text-purple-400">
+                            <i class="fas fa-bezier-curve text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Product Design</h3>
+                        <p class="text-slate-400">Human-centric UI/UX focused on conversion and retention.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-[#050a18]">
+        <div class="container">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4">Selected Work</h2>
+                    <p class="text-slate-500">A glimpse into my latest development projects.</p>
+                </div>
+                <a href="#" class="text-blue-500 font-bold hover:underline">View All Github <i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+            </div>
+
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="group relative">
+                        <div class="relative overflow-hidden rounded-[2.5rem] mb-6 aspect-video">
+                            <img src="https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Project">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-10">
+                                <button class="btn btn-light rounded-full font-bold px-6">View Project</button>
+                            </div>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">CryptoWealth Dashboard</h4>
+                        <div class="flex gap-2 opacity-60">
+                            <span class="text-xs uppercase tracking-tighter">React</span>
+                            <span class="text-xs uppercase tracking-tighter">•</span>
+                            <span class="text-xs uppercase tracking-tighter">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="group relative">
+                        <div class="relative overflow-hidden rounded-[2.5rem] mb-6 aspect-video">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Project">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-10">
+                                <button class="btn btn-light rounded-full font-bold px-6">View Project</button>
+                            </div>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">Aether E-Commerce</h4>
+                        <div class="flex gap-2 opacity-60">
+                            <span class="text-xs uppercase tracking-tighter">Next.js 14</span>
+                            <span class="text-xs uppercase tracking-tighter">•</span>
+                            <span class="text-xs uppercase tracking-tighter">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32">
+        <div class="container text-center">
+            <div class="glass-card py-20 px-10 rounded-[3rem] relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-8">Ready to start?</h2>
+                    <p class="text-slate-400 text-lg mb-12 max-w-xl mx-auto">Currently accepting new projects for early 2026. Let's discuss your vision.</p>
+                    <a href="mailto:mubeen@example.com" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 rounded-2xl font-bold transition shadow-xl shadow-blue-500/20 no-underline">
+                        Get in Touch
+                    </a>
+                </div>
+                <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-600/20 rounded-full blur-[80px]"></div>
+                <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-purple-600/20 rounded-full blur-[80px]"></div>
+            </div>
+
+            <div class="mt-24 flex flex-col md:flex-row justify-between items-center gap-6 opacity-40">
+                <div class="text-xl font-bold tracking-tighter">MUBEEN.</div>
+                <div class="flex gap-6">
+                    <a href="#" class="text-white hover:text-blue-400"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-white hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-white hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p class="text-[10px] font-bold uppercase tracking-widest">© 2026 Mubeen</p>
+            </div>
+        </div>
+    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Simple scroll logic for navbar -->
-    <script>
-        window.onscroll = function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('shadow-2xl', 'py-2');
-                nav.classList.remove('py-3');
-            } else {
-                nav.classList.remove('shadow-2xl', 'py-2');
-                nav.classList.add('py-3');
-            }
-        };
-    </script>
 </body>
 </html>
